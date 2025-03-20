@@ -1,0 +1,47 @@
+.count {
+  width: 90px;
+
+  @include on-tablet {
+    height: 47px;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+
+    @include on-tablet {
+      margin-top: 20px;
+    }
+  }
+
+  &__list {
+    display: none;
+
+    &--active {
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      padding: 13px 24px;
+      gap: 10px;
+      background-color: $menu-bg-color;
+      border-radius: 4px;
+      margin-top: 5px;
+      text-align: center;
+    }
+  }
+
+  &__item {
+    &--active {
+      color: $blue-color;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    right: 10px;
+  }
+}

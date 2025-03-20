@@ -1,0 +1,32 @@
+.countries {
+  height: 47px;
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__list {
+    display: none;
+
+    &--active {
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      padding: 13px 24px;
+      gap: 10px;
+      background-color: $menu-bg-color;
+      border-radius: 4px;
+      margin-top: 5px;
+    }
+  }
+
+  &__item {
+    &--active {
+      color: $blue-color;
+    }
+  }
+}

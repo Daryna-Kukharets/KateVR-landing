@@ -1,0 +1,83 @@
+.swiper {
+  width: 100%;
+
+  &-wrapper {
+    display: flex;
+  }
+
+  &-slide {
+    position: relative;
+    padding-bottom: 8px;
+
+    @include on-tablet {
+      padding-bottom: 0;
+    }
+  }
+
+  &-slide img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+
+    @include on-desktop {
+      aspect-ratio: 16 / 8;
+    }
+  }
+
+  &-button-prev-out,
+  &-button-next-out {
+    cursor: pointer;
+  }
+
+  &-button-disabled {
+    color: $grey-text-color;
+    cursor: no-drop;
+  }
+
+  &-pagination {
+    position: unset;
+    height: min-content;
+
+    @include on-desktop {
+      display: none;
+    }
+
+    &-bullet {
+      background-color: #484848;
+      opacity: 1;
+      width: 4px;
+      height: 4px;
+
+      &-active {
+        background-color: #ababab;
+      }
+    }
+
+    &--fraction {
+      display: none;
+
+      @include on-desktop {
+        display: block;
+        position: absolute;
+        left: -50px;
+        color: $blue-color;
+      }
+    }
+  }
+
+  &-scrollbar {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+      position: unset !important;
+      width: 40% !important;
+      margin-top: 10px;
+
+      --swiper-scrollbar-bg-color: #212121;
+      --swiper-scrollbar-drag-bg-color: #{$blue-color};
+      --swiper-scrollbar-size: 2px;
+    }
+  }
+}

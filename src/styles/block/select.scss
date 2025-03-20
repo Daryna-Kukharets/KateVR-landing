@@ -1,0 +1,49 @@
+.select {
+  display: none;
+
+  @include on-desktop {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__start {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__button {
+    background-color: inherit;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: $blue-color;
+    position: relative;
+  }
+
+  &__list {
+    margin-top: 30px;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    transform: translateY(-15px);
+    background-color: $menu-bg-color;
+    border: 1px solid $blue-color;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: all $effect-duration ease;
+
+    &--active {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0);
+    }
+  }
+
+  &__item {
+    @include hover(color $white-color);
+  }
+}

@@ -1,0 +1,51 @@
+.lang {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  z-index: 10;
+
+  @include on-desktop {
+    display: none;
+  }
+
+  &__wrapper {
+    background-color: $menu-bg-color;
+    min-height: 100vh;
+    height: auto;
+    position: relative;
+
+    @include on-tablet {
+      min-height: auto;
+    }
+  }
+
+  &__container {
+    padding-top: 20px;
+
+    @include on-tablet {
+      padding-top: 33px;
+    }
+  }
+
+  &__back {
+    display: block;
+    width: 10px;
+    height: 20px;
+    background-image: url(../images/icons/arrow-back.svg);
+    background-repeat: no-repeat;
+    margin-left: 20px;
+
+    @include hover(transform scale(1.2));
+
+    @include on-tablet {
+      margin-left: 33px;
+    }
+  }
+
+  &__nav {
+    padding-bottom: 20px;
+
+    @include on-tablet {
+      padding-bottom: 15px;
+    }
+  }
+}

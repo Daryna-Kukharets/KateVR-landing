@@ -1,0 +1,151 @@
+.benefits {
+  background: linear-gradient(147deg, #191536 -0.5%, #000 99.5%);
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: relative;
+
+  @include on-tablet {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  @include on-desktop {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__title {
+    padding-bottom: 12px;
+
+    @include on-tablet {
+      padding-bottom: 32px;
+    }
+
+    @include on-desktop {
+      padding-bottom: 85px;
+      width: max-content;
+      margin: 0 auto;
+    }
+  }
+
+  &__box {
+    @include on-tablet {
+      display: flex;
+      align-items: center;
+
+      @include page-grid;
+    }
+
+    @include on-desktop {
+      align-items: baseline;
+    }
+  }
+
+  &__paragraph {
+    margin-top: 11px;
+    font-size: 16px;
+    line-height: 150%;
+    color: $grey-text-color;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    @include on-tablet {
+      padding-top: 37px;
+      overflow: visible;
+      white-space: unset;
+    }
+
+    @include on-desktop {
+      padding-top: 18px;
+    }
+
+    &--phone {
+      @include on-tablet {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      display: none;
+
+      @include on-tablet {
+        display: block;
+      }
+
+      @include on-desktop {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include on-desktop {
+        display: block;
+      }
+    }
+  }
+
+  &__section {
+    height: 80px;
+    cursor: pointer;
+    transition: all $effect-duration ease;
+
+    @include hover(height 150px, overflow visible);
+
+    &:hover .benefits__paragraph {
+      height: auto;
+      white-space: normal;
+      text-overflow: unset;
+    }
+
+    @include on-tablet {
+      height: auto;
+      text-align: center;
+      grid-column: span 2;
+
+      @include hover(height auto, cursor unset);
+    }
+
+    @include on-desktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__img {
+    display: none;
+    cursor: pointer;
+
+    @include hover(transform scale(1.2), filter hue-rotate(120deg));
+
+    @include on-tablet {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    font-weight: 900;
+    line-height: normal;
+    padding-top: 20px;
+
+    @include on-tablet {
+      padding-top: 25px;
+    }
+
+    @include on-desktop {
+      padding-top: 35px;
+    }
+  }
+
+  &__buy {
+    margin: 90px auto 0;
+  }
+}

@@ -1,0 +1,19 @@
+.play {
+  cursor: pointer;
+  margin-top: 25px;
+  transition: fill $effect-duration ease;
+
+  @include on-tablet {
+    margin-top: 34px;
+  }
+
+  @include on-desktop {
+    grid-column: 2 / 5;
+  }
+
+  @include hover(transform scale(1.1));
+
+  &:hover &__arrow {
+    fill: $white-color;
+  }
+}

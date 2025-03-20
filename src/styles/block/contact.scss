@@ -1,0 +1,156 @@
+.contact {
+  background-color: $dark-blue;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  @include on-tablet {
+    padding-top: 70px;
+    padding-bottom: 130px;
+  }
+
+  @include on-desktop {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__grid {
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &__title-box {
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__question {
+    font-size: 14px;
+    line-height: normal;
+    color: $blue-color;
+    padding-bottom: 11px;
+
+    @include on-desktop {
+      padding-bottom: 13px;
+    }
+  }
+
+  &__form-box {
+    @include on-tablet {
+      grid-column: span 3;
+      grid-row: span 4;
+      position: relative;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+
+    @include on-tablet {
+      width: 200px;
+      height: 48px;
+      margin-top: 48px;
+    }
+
+    @include on-desktop {
+      margin-top: 90px;
+    }
+  }
+
+  &__message {
+    margin-top: 27px;
+    color: $grey-text-color;
+    font-size: 12px;
+    line-height: 150%;
+
+    @include on-tablet {
+      font-size: 16px;
+      grid-column: span 3;
+      margin-top: 50px;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+      margin-top: 26px;
+    }
+  }
+
+  &__contacts {
+    display: none;
+
+    @include on-tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      grid-column: span 3;
+      margin-top: 76px;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__link {
+    font-size: 16px;
+    line-height: normal;
+    color: $grey-text-color;
+    position: relative;
+    width: max-content;
+    transition: all $effect-duration ease;
+
+    &--footer {
+      font-size: 13px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $grey-text-color;
+      bottom: -5px;
+      left: 0;
+      transform: scaleX(0);
+      transition: transform $effect-duration ease;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+    }
+  }
+
+  &__scroll-up {
+    display: none;
+    width: 48px;
+    height: 48px;
+    background-image: url(../images/scroll-up-white.svg);
+    background-size: contain;
+
+    @include on-tablet {
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+
+    @include hover(
+      background-image url(../images/scroll-up-blue.svg),
+      transform scale(1.2)
+    );
+  }
+}

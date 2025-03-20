@@ -1,0 +1,154 @@
+.faq {
+  box-sizing: border-box;
+  z-index: 10;
+
+  &__wrapper {
+    background-color: $menu-bg-color;
+    min-height: 100vh;
+    height: auto;
+    position: relative;
+
+    @include on-desktop {
+      width: 880px;
+      min-height: auto;
+      margin: 100px auto;
+    }
+  }
+
+  &__container {
+    @include container;
+
+    padding-top: 20px;
+    padding-bottom: 10px;
+
+    @include on-tablet {
+      padding-top: 34px;
+    }
+
+    @include on-desktop {
+      padding-inline: 90px;
+    }
+  }
+
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    padding-top: 48px;
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      padding-top: 68px;
+    }
+
+    @include on-desktop {
+      padding-top: 24px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__section {
+    border: 1px solid $blue-color;
+    border-radius: 4px;
+    padding: 18px 12px;
+    cursor: pointer;
+    transition: box-shadow $effect-duration ease;
+
+    @include on-tablet {
+      padding: 18px 28px;
+    }
+
+    &:hover {
+      box-shadow: 5px 4px 10px rgba(5, 194, 223, 0.2);
+    }
+  }
+
+  &__section:not(:first-of-type) {
+    margin-top: 13px;
+
+    @include on-tablet {
+      margin-top: 18px;
+    }
+
+    @include on-desktop {
+      margin-top: 15px;
+    }
+  }
+
+  &__info {
+    display: none;
+
+    &--active {
+      display: block;
+      padding-bottom: 24px;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 150%;
+
+    &--blue {
+      color: $blue-color;
+    }
+
+    &--grey {
+      padding-top: 18px;
+      color: $grey-text-color;
+    }
+
+    &--small {
+      padding-top: 35px;
+      font-size: 12px;
+      color: #545454;
+
+      @include on-tablet {
+        padding-top: 20px;
+      }
+    }
+  }
+
+  &__open {
+    display: none;
+  }
+
+  &__more {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+    }
+  }
+
+  &__more-link {
+    padding-top: 50px;
+    margin: 0 auto;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+    color: $blue-color;
+
+    @include hover(transform scale(1.2), filter brightness(100));
+
+    @include on-desktop {
+      padding-bottom: 50px;
+    }
+  }
+
+  &__bg {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

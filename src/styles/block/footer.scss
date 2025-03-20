@@ -1,0 +1,65 @@
+.footer {
+  background-color: #000;
+  padding-top: 45px;
+  padding-bottom: 50px;
+
+  @include on-tablet {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  @include on-desktop {
+    padding-top: 43px;
+    padding-bottom: 43px;
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__grid {
+    @include page-grid;
+
+    @include on-tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__logo {
+    grid-column: span 2;
+  }
+
+  &__menu {
+    grid-column: span 1;
+  }
+
+  &__contact-link {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__contact-icon {
+    padding-top: 22px;
+    display: flex;
+    gap: 25px;
+
+    @include on-tablet {
+      padding-top: 0;
+    }
+  }
+
+  &__icon-svg {
+    @include hover(fill $blue-color);
+  }
+
+  &__icon-scale {
+    @include hover(transform scale(1.5));
+  }
+}

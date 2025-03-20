@@ -1,0 +1,60 @@
+.buy {
+  width: 100%;
+  padding: 33px 0;
+  background: rgb(5, 5, 5);
+  background: linear-gradient(
+    0deg,
+    rgba(5, 5, 5, 1) 0%,
+    rgba(4, 4, 4, 0.59) 60%,
+    rgba(0, 0, 0, 0.21) 90%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  position: sticky;
+  bottom: 0%;
+  left: 0;
+  right: 0;
+  z-index: 5;
+
+  @include on-desktop {
+    display: none;
+  }
+
+  &__link {
+    margin: 0 20px;
+    height: 40px;
+    box-sizing: border-box;
+    background-color: $blue-color;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white-color;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%;
+
+    @include hover(background-color $white-color, color $blue-color);
+
+    @include on-tablet {
+      width: 60%;
+      margin: 0 auto;
+    }
+
+    @include on-desktop {
+      font-size: 16px;
+    }
+  }
+
+  &__desktop {
+    display: none;
+
+    @include on-desktop {
+      margin-left: 35px;
+      display: flex;
+      bottom: 0;
+      width: 200px;
+      height: 48px;
+      margin-right: 0;
+    }
+  }
+}

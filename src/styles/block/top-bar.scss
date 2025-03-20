@@ -1,0 +1,89 @@
+.top-bar {
+  @include container;
+
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+
+  @include on-tablet {
+    padding-top: 32px;
+  }
+
+  @include on-desktop {
+    padding-top: 47px;
+  }
+
+  &__logo-language {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 58px;
+    height: 12px;
+    background-image: url(../images/icons/logo.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+    @include hover(transform scale(1.2));
+
+    @include on-tablet {
+      width: 67px;
+      height: 14px;
+    }
+
+    @include on-desktop {
+      width: 78px;
+      height: 16px;
+    }
+
+    &--footer {
+      width: 69px;
+      height: 14px;
+      padding-bottom: 15px;
+
+      @include on-tablet {
+        padding-bottom: 0;
+      }
+
+      @include on-desktop {
+        width: 72px;
+      }
+    }
+  }
+
+  &__form {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      padding-left: 35px;
+    }
+  }
+
+  &__select {
+    background-color: inherit;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 130%;
+    color: $blue-color;
+    cursor: pointer;
+  }
+
+  &__menu {
+    @include hover(transform scale(1.2));
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__menu-img {
+    @include on-tablet {
+      width: 30px;
+      height: 13px;
+    }
+  }
+}

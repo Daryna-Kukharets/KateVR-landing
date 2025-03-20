@@ -1,0 +1,163 @@
+.pay {
+  &__form {
+    display: none;
+
+    &--active {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-top: 88px;
+      margin-bottom: 37px;
+
+      @include on-tablet {
+        @include page-grid;
+
+        gap: 40px;
+        margin-bottom: 43px;
+      }
+
+      @include on-desktop {
+        grid-template-columns: repeat(8, 1fr);
+      }
+    }
+  }
+
+  &__input-box {
+    position: relative;
+    width: 100%;
+
+    @include on-tablet {
+      grid-column: 2 / 6;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+    }
+
+    &--card {
+      display: flex;
+      gap: 30px;
+    }
+  }
+
+  &__box-date {
+    @include on-tablet {
+      grid-column: span 2;
+    }
+
+    @include on-desktop {
+      grid-column: span 3;
+    }
+  }
+
+  &__box-cvv {
+    @include on-tablet {
+      grid-column: span 2;
+    }
+
+    @include on-desktop {
+      grid-column: span 3;
+    }
+  }
+
+  &__input {
+    &--digits {
+      font-family: monospace;
+      font-size: 18px;
+      line-height: 130%;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      padding-inline: 0;
+
+      @include on-tablet {
+        font-size: 20px;
+      }
+    }
+
+    &--card {
+      border-bottom: none;
+      padding-bottom: 6px;
+
+      &:focus {
+        border-bottom: none;
+      }
+    }
+
+    &--date {
+      width: 11ch;
+      letter-spacing: 0;
+    }
+
+    &--cvv {
+      width: 4ch;
+    }
+  }
+
+  &__placeholder {
+    margin-bottom: 17px;
+  }
+
+  &__lines {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    bottom: -2px;
+    gap: 17px;
+  }
+
+  &__line {
+    width: 5ch;
+    height: 1px;
+    background: $dark-grey-color;
+
+    @include on-tablet {
+      width: 5.8ch;
+    }
+
+    &.active {
+      background: $blue-color;
+    }
+  }
+
+  &__card-info {
+    @include page-grid;
+
+    margin-top: 17px;
+
+    @include on-tablet {
+      grid-column: 2 / 6;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  &__card-box {
+    width: max-content;
+  }
+
+  &__visa {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+    grid-column: span 2;
+
+    @include on-tablet {
+      margin-top: 58px;
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 3;
+    }
+  }
+}

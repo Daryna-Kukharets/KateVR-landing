@@ -1,0 +1,116 @@
+.form {
+  &--contact {
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+    gap: 24px;
+  }
+
+  &__input-box {
+    width: 100%;
+    position: relative;
+  }
+
+  &__placeholder {
+    position: absolute;
+    left: 0;
+    bottom: 15px;
+    font-size: 14px;
+    line-height: 150%;
+    color: $grey-text-color;
+    transition: all $effect-duration ease;
+    cursor: text;
+
+    &:enabled {
+      bottom: 15px;
+    }
+
+    &.filled {
+      transform: translateY(-90%);
+      color: $blue-color;
+      bottom: 15px;
+    }
+
+    &--select {
+      position: static;
+    }
+
+    &--error {
+      color: #860404;
+    }
+
+    &--error.filled {
+      color: #860404;
+    }
+  }
+
+  &__textarea {
+    resize: none;
+  }
+
+  &__input,
+  &__textarea {
+    font-family: Inter, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $white-color;
+
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid $dark-grey-color;
+    padding-bottom: 10px;
+    outline: none;
+    position: relative;
+
+    &:focus {
+      border-bottom: 1px solid $blue-color;
+    }
+
+    &:focus ~ .form__placeholder {
+      transform: translateY(-90%);
+      color: $blue-color;
+    }
+
+    &--error {
+      border-bottom: 1px solid #860404;
+    }
+  }
+
+  &__button {
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    color: $white-color;
+
+    height: 40px;
+    border-radius: 4px;
+    background-color: $blue-color;
+    outline: none;
+    border: 1px solid $blue-color;
+    cursor: pointer;
+
+    @include hover(background-color $white-color, color $blue-color);
+
+    @include on-tablet {
+      height: 48px;
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  background-color: transparent;
+  -webkit-text-fill-color: $white-color;
+  -webkit-box-shadow: none;
+  transition: background-color 5000s ease 0s;
+  color-scheme: dark;
+}
